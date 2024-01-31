@@ -1,5 +1,5 @@
 calcularValorDescuento=function(monto, porcentajeDescuento){
-    let descuento=monto*porcentajeDescuento/100;
+    let descuento=monto-monto*porcentajeDescuento/100;
     return descuento;
 }
 

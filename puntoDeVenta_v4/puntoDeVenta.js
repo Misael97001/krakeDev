@@ -37,9 +37,11 @@ calcularValorTotal = function () {
         Si el caso de prueba es exitoso, hacer un commit
      */
     //6. Invocar a calcularValorDescuento y lo que devuelve guardar en la variable valorDescuento
+    valorDescuento=calcularValorDescuento(valorSubtotal,porcentajeDescuento);
     //7. Mostrar el resultado en el componente lblDescuento
+    mostrarTexto("lblDescuento",valorDescuento);
     /*
-        Caso de prueba: 
+        Caso de prueba:
             - cantidad: 10 
             - precioProducto: 5.4  
             - descuento: 10
@@ -47,32 +49,35 @@ calcularValorTotal = function () {
         Si el caso de prueba es exitoso, hacer un commit
      */
     //8. Invocar a calcularIVA y lo que devuelve guardar en la variable valorIVA
+    valorIVA=calcularIVA(valorDescuento,valorIVA);
     // El IVA debe calcularse sobre el valor del subtotal menos el descuento
-    //9. Mostrar el resultado en el componente lblValorIVA    
+    //9. Mostrar el resultado en el componente lblValorIVA
+    mostrarTexto("lblValorIVA",valorIVA);    
         /*
             Caso de prueba: 
                 - cantidad: 10 
                 - precioProducto: 5.4  
                 - descuento: 10
-
                     - valorSubtotal: 54
                     - descuento:5.4
                     - valorSubtotal 
                     - descuento: 48.6
-
                 IVA esperado: 5.832
 
             Si el caso de prueba es exitoso, hacer un commit
         */
     //10. Invocar a calcularTotal y lo que devuelve guardar en la variable valorTotal
+
+    valorTotal=calcularTotal(0,valorDescuento,valorIVA);
     //11. Mostrar el resultado en el componente lblTotal
+    mostrarTexto("lblTotal",valorTotal);
     /*
         Caso de prueba: 
             - cantidad: 10
             - precioProducto: 5.4 
             - descuento: 10
 
-                --valorSubtotal: 5.4
+                --valorSubtotal: 54
                 --descuento: 5.4
                 --IVA: 5.832
 
@@ -82,6 +87,7 @@ calcularValorTotal = function () {
        */
             
     //12. Mostrar un resumen en el componente lblResumen, si no existe debe agregarlo
+    
     /*
         Ejemplo: 
             Valor a pagar por 20 cerveza corona con 10% de descuento: USD 48.75

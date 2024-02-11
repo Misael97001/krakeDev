@@ -7,10 +7,21 @@ calcularPromedioNotas=function(){
     let promedio=calcularPromedio(nota1, nota2, nota3);
     promedio=promedio.toFixed(2);
 
-    if(promedio>7){
+    if(promedio<5 && promedio>0){
+        mostrarImagen("imagen","reprobado.gif")
+        mostrarTexto("lblMensaje", "REPROBADA");
 
-        mostrarImagen ("imagen", "exito.gif"); 
+    }else if(promedio>=5 && promedio<=8){
+        mostrarImagen("imagen","buenTrabajo.gif")
+        mostrarTexto("lblMensaje", "BUEN TRABAJO");
+        
+    }else if(promedio>8 && promedio<=10){
+        mostrarImagen ("imagen", "exito.gif");
+        mostrarTexto("lblMensaje", "EXCELENTE");
     }else{
         mostrarImagen ("imagen", "fracaso.gif");
+        mostrarTexto("lblMensaje", "DATOS INCORRECTOS");
     }
+
+
 } 

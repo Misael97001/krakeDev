@@ -1,0 +1,131 @@
+body{
+  background-color: black;
+    background-size: cover;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.principal{
+    display: flex;
+    background-color: rgba(240, 248, 255, 0.8);
+    
+    flex-direction: row;
+    margin-top: 100px;
+    padding-top: 90px;
+
+}
+.titulo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.logoEscuela{
+    display: flex;
+    flex:1;
+    justify-content: center;
+    align-items: center;
+    
+}
+.areaResultado{
+    display: flex;
+    flex:1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 100px;
+}
+.imagen{
+    display: flex;
+    flex:1;
+    justify-content: center;
+    align-items: center;
+  
+}
+.estiloBoton{
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+
+}
+.estiloBoton:hover {
+    background-color:white; 
+    color: #4CAF50;
+    border:1px;
+    border-color: #4CAF50;
+    border-radius: 5px;
+}
+.estiloBoton:active{
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+
+}
+.botones{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    margin: 20px;
+}
+.contenedorBoton{
+    display: flex;
+    flex-direction: row;
+    flex:2;
+    margin: 10px;
+    justify-content: center;
+}
+.cajaTexto{
+    border-radius: 10px;
+    border-color: #4CAF50;
+    
+    font-size: 20px;
+    color:rgb(85, 83, 83);
+}
+.ingresoDatos{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.tituloCampo{
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content:end ;
+    align-items: flex-end;
+    margin-right: 20px;
+}
+.resultado{
+    display: flex;
+    flex:1;
+    flex-direction: row;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top:10px;
+    padding-top: 40px;
+
+}
+.imagenResultado{
+    display: flex;
+    flex:6;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+.error{
+    color:red;
+    font-style: italic;
+    font-size: 16px;
+}

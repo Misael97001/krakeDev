@@ -2,7 +2,8 @@ validarPlaca = function () {
     let placa = recuperarTexto("txtPlaca");
     let erroresEstructura = validarEstructura(placa);
     if (erroresEstructura == "") {
-        mostrarTexto("lblValidar", "VALIDA")
+        mostrarTexto("lblValidar", "VALIDA");
+        mostrarTexto("lblErrores", erroresEstructura);
     } else {
         mostrarTexto("lblValidar", "INCORRECTA");
         mostrarTexto("lblErrores", erroresEstructura);

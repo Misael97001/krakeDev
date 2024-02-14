@@ -3,7 +3,6 @@ validarEstructura = function (placa) {
     let char1, char2, char3, char4, char5, char6, char7, char8;
     let error = "";
     if (placa.length >= 7 && placa.length <= 8) {
-
         char1 = esMayuscula(placa.charAt(0));
         char2 = esMayuscula(placa.charAt(1));
         char3 = esMayuscula(placa.charAt(2));

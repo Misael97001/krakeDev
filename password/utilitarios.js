@@ -35,8 +35,6 @@ recuperarFloat = function (idComponente) {
     return valorFlotante;
 }
 
-
-
 esMayuscula=function(caracter){
     let codigoLetra=caracter.charCodeAt(0);
     if(codigoLetra>=65 && codigoLetra<=90){

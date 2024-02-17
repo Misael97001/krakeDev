@@ -23,11 +23,11 @@ generarAleatorios = function () {
 mostrarResultados = function (arregloNumeros) {
     let cmpTabla = document.getElementById("divTabla");
     let contenidoTabla = "<table><tr><th>ALEATORIO<th><tr>";
-    let miNota;
+    let miAleatorio;
     for (let i = 0; i < arregloNumeros; i++) {
-        miNota = aleatorios[i];
+        miAleatorio = aleatorios[i];
         contenidoTabla += "<tr><td>";
-        contenidoTabla += miNota;
+        contenidoTabla += miAleatorio;
         contenidoTabla += "</tr></td>";
     }
     contenidoTabla += "</table>";

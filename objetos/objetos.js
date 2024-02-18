@@ -30,11 +30,11 @@ crearProducto=function(){
     console.log(producto1.nombre);
     console.log(producto2.precio);
 
-    if(producto1.stock>=producto2.stock){
+    if(producto1.stock>producto2.stock){
         console.log("EL PRODUCTO 1 TIENE MAYOR STOCK");
-    }else if(producto2.stock>=producto1.stock){
+    }else if(producto2.stock>producto1.stock){
         console.log("EL PRODUCTO 2 TIENE MAYOR STOCK");
-    }else{
+    }else if(producto2.stock==producto1.stock){
         console.log("AMBOS PRODUCTOS TIENEN EL MISMO STOCK");
     }
 }

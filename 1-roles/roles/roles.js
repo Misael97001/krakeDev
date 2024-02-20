@@ -70,6 +70,19 @@ mostrarEmpleados = function () {
 
 }
 
+ejecutarBusqueda=function(){
+    let valorCedula=recuperarTexto("txtBusquedaCedula");
+    let empleado=buscarEmpleado(valorCedula);
+    if(empleado==null){
+        alert("empleado no encontrado");
+    }else{
+        mostrarTextoEnCaja("txtCedula",empleado.cedula);
+        mostrarTextoEnCaja("txtNombre",empleado.nombre);
+        mostrarTextoEnCaja("txtApellido",empleado.apellido);
+        mostrarTextoEnCaja("txtSueldo",empleado.sueldo);
+    }
+}
+
 
 buscarEmpleado = function (cedula) {
     let elementoEmpleado;
@@ -77,7 +90,7 @@ buscarEmpleado = function (cedula) {
     for (let i = 0; i < empleados.length; i++) {
         elementoEmpleado = empleados[i];
         if (elementoEmpleado.cedula == cedula) {
-            clienteEncontrado = elementoEmpleado;
+            empleadoEncontrado = elementoEmpleado;
             esNuevo = false;
             break;
         } else {
@@ -129,7 +142,7 @@ guardar = function () {
             deshabilitarCajasTexto();
         } else {
             alert("Ya existe un empleado con la cedula " + valorCedula)
-            
+        
         }
 
     }
@@ -196,8 +209,7 @@ validarApellido = function (apellido) {
 
 validarSueldo = function (sueldo) {
     let sueldoValido = false;
-    if (!Number.isInteger(sueldo)) {
-        if (sueldo >= 400.00 && sueldo <= 500.00) {
+        if (sueldo >= 400 && sueldo <= 500) {
             sueldoValido = true;
             mostrarTexto("lblErrorNombre", "");
             return sueldoValido;
@@ -205,10 +217,6 @@ validarSueldo = function (sueldo) {
             mostrarTexto("lblErrorSueldo", "Debe tener entre 400 y 500 ");
             return sueldoValido;
         }
-    } else {
-        mostrarTexto("lblErrorSueldo", "No es un numero float");
-        return false;
-    }
 }
 
 esMayuscula = function (caracter) {

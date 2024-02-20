@@ -13,7 +13,7 @@ mostrarOpcionEmpleado = function () {
     deshabilitarCajasTexto();
 }
 
-deshabilitarCajasTexto=function(){
+deshabilitarCajasTexto = function () {
     deshabilitarComponente("txtCedula");
     deshabilitarComponente("txtNombre");
     deshabilitarComponente("txtApellido");
@@ -70,16 +70,21 @@ mostrarEmpleados = function () {
 
 }
 
-ejecutarBusqueda=function(){
-    let valorCedula=recuperarTexto("txtBusquedaCedula");
-    let empleado=buscarEmpleado(valorCedula);
-    if(empleado==null){
-        alert("empleado no encontrado");
-    }else{
-        mostrarTextoEnCaja("txtCedula",empleado.cedula);
-        mostrarTextoEnCaja("txtNombre",empleado.nombre);
-        mostrarTextoEnCaja("txtApellido",empleado.apellido);
-        mostrarTextoEnCaja("txtSueldo",empleado.sueldo);
+ejecutarBusqueda = function () {
+    let valorCedula = recuperarTexto("txtBusquedaCedula");
+    let empleado = buscarEmpleado(valorCedula);
+    if (empleado == null) {
+        alert("Empleado no existe");
+    } else {
+        mostrarTextoEnCaja("txtCedula", empleado.cedula);
+        mostrarTextoEnCaja("txtNombre", empleado.nombre);
+        mostrarTextoEnCaja("txtApellido", empleado.apellido);
+        mostrarTextoEnCaja("txtSueldo", empleado.sueldo);
+        habilitarComponente("txtNombre");
+        habilitarComponente("txtApellido");
+        habilitarComponente("txtSueldo");
+        habilitarComponente("btnGuardar");
+        deshabilitarComponente("txtCedula");
     }
 }
 
@@ -91,10 +96,10 @@ buscarEmpleado = function (cedula) {
         elementoEmpleado = empleados[i];
         if (elementoEmpleado.cedula == cedula) {
             empleadoEncontrado = elementoEmpleado;
-            esNuevo = false;
+            esNuevo = true;
             break;
         } else {
-            esNuevo = true;
+            esNuevo = false;
         }
     }
     return empleadoEncontrado;
@@ -109,7 +114,7 @@ agregarEmpleado = function (empleado) {
         empleados.push(empleado);
         alert("Empleado agregado");
         mostrarEmpleados();
-        
+
         return true;
     } else {
         alert("ya existe el empleado con esa selda" + empleado.cedula);
@@ -129,8 +134,8 @@ guardar = function () {
         validarApellido(valorApellido) &
         validarSueldo(valorSueldo)) {
 
-        let empleadoEncontrado = buscarEmpleado(valorCedula);
-        if (esNuevo == true) {
+        buscarEmpleado(valorCedula);
+        if (esNuevo == false) {
             let empleado = [];
 
             empleado.cedula = valorCedula;
@@ -138,11 +143,20 @@ guardar = function () {
             empleado.apellido = valorApellido;
             empleado.sueldo = valorSueldo;
             let valorAgregarEmepleado = agregarEmpleado(empleado);
-            
+
             deshabilitarCajasTexto();
+            esNuevo = false;
         } else {
-            alert("Ya existe un empleado con la cedula " + valorCedula)
-        
+      
+            let empleadoEncontrado = buscarEmpleado(valorCedula);
+            if (empleadoEncontrado != null) {
+                empleadoEncontrado.nombre = valorNombre;
+                empleadoEncontrado.apellido = valorApellido;
+                empleadoEncontrado.sueldo = valorSueldo;
+                mostrarEmpleados();
+                deshabilitarCajasTexto();
+                alert("EMPLEADO MODIFICADO EXITOSAMENTE ");
+            }
         }
 
     }
@@ -209,14 +223,14 @@ validarApellido = function (apellido) {
 
 validarSueldo = function (sueldo) {
     let sueldoValido = false;
-        if (sueldo >= 400 && sueldo <= 500) {
-            sueldoValido = true;
-            mostrarTexto("lblErrorNombre", "");
-            return sueldoValido;
-        } else {
-            mostrarTexto("lblErrorSueldo", "Debe tener entre 400 y 500 ");
-            return sueldoValido;
-        }
+    if (sueldo >= 400 && sueldo <= 500) {
+        sueldoValido = true;
+        mostrarTexto("lblErrorNombre", "");
+        return sueldoValido;
+    } else {
+        mostrarTexto("lblErrorSueldo", "Debe tener entre 400 y 500 ");
+        return sueldoValido;
+    }
 }
 
 esMayuscula = function (caracter) {

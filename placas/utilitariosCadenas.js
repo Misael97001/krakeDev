@@ -1,3 +1,12 @@
+esMinuscula=function(caracter){
+    let codigoLetra=caracter.charCodeAt(0);
+    if(codigoLetra>=97 && codigoLetra<=122){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 
 esMayuscula=function(caracter){
     let codigoLetra=caracter.charCodeAt(0);
@@ -8,14 +17,7 @@ esMayuscula=function(caracter){
     }
 }
 
-esMinuscula=function(caracter){
-    let codigoLetra=caracter.charCodeAt(0);
-    if(codigoLetra>=97 && codigoLetra<=122){
-        return true;
-    }else{
-        return false;
-    }
-}
+
 
 esDigito=function(caracter){
     let codigoLetra=caracter.charCodeAt(0);

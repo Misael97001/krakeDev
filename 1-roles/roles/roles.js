@@ -164,6 +164,15 @@ guardar = function () {
 }
 
 
+limpiar=function(){
+    mostrarTextoEnCaja("txtCedula","");
+    mostrarTextoEnCaja("txtNombre","");
+    mostrarTextoEnCaja("txtApellido","");
+    mostrarTextoEnCaja("txtSueldo","");
+    esNuevo=false;
+    deshabilitarCajasTexto();
+}
+
 validarCedula = function (cedula) {
     let cedulaValida = false;
     if (cedula.length == 10) {

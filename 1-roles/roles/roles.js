@@ -185,3 +185,21 @@ buscarPorRol=function(){
         alert("No existe el empleado");
     }
 }
+
+calcularAporteEmpleado=function(sueldo){
+    return sueldo*(9.45/100);
+}
+calcularValorAPagar=function(sueldo,aporte,descuento){
+   return (sueldo-aporte-descuento);
+}
+
+calcularRol=function(){
+    let sueldoEmmpleado=recuperarFloatDiv("infoSueldo");
+    let descuentoEmpleado=recuperarFloat("txtDescuentos");
+    if(descuentoEmpleado>=0 && descuentoEmpleado<=sueldoEmmpleado){
+       let aporteEmpleado=calcularAporteEmpleado(sueldoEmmpleado);
+       mostrarTexto("infoIESS",aporteEmpleado.toFixed(2));
+      let valorAPagar=calcularValorAPagar(sueldoEmmpleado,descuentoEmpleado,aporteEmpleado);
+      mostrarTexto("infoPago",valorAPagar);
+    }
+}

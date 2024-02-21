@@ -254,8 +254,8 @@ guardarRol = function () {
 
     let valorCedula = recuperarTextoDiv("infoCedula");
     let valorNombre = recuperarTextoDiv("infoNombre");
-    let valorSueldo = recuperarTextoDiv("infoSueldo");
-    let valorEmpleado = recuperarTextoDiv("infoIESS")
+    let valorSueldo = recuperarFloatDiv("infoPago");
+    let valorEmpleado = recuperarFloatDiv("infoIESS")
     let valorAporteEmpleador = calcularAporteEmpleador(valorSueldo);    
     let rol = {
         cedula: valorCedula,
@@ -264,8 +264,6 @@ guardarRol = function () {
         aporteEmpleado: valorEmpleado,
         aporteEmpleador: valorAporteEmpleador,
     };
-    
-
     agregarRol(rol);
     alert("Exito");
     deshabilitarComponente("botonGuardarRol");
@@ -294,4 +292,28 @@ mostrarRoles = function () {
     }
     contenidoTabla += "</table>";
     cmpTabla.innerHTML = contenidoTabla;
+    mostrarTotales();
+}
+
+mostrarTotales=function(){
+
+    let totalEmpleado=0;
+    let totalEmpleador=0;
+    let totalAPagar=0;
+
+    for(let i=0; i<roles.length;i++){
+        let resultado=roles[i]
+        totalAPagar+= totalEmpleado+resultado.sueldo;
+
+        totalEmpleado+= totalEmpleado+resultado.aporteEmpleado;
+        totalEmpleador+= totalEmpleador+resultado.aporteEmpleador;
+
+    }
+
+    let totalNomina=totalEmpleado+totalEmpleador+totalAPagar;
+
+    mostrarTexto("infoTotalPago",totalAPagar);
+    mostrarTexto("infoAporteEmpresa",totalEmpleador.toFixed(2));
+    mostrarTexto("infoAporteEmpleado",totalEmpleado.toFixed(2));
+    mostrarTexto("infoTotalNomina",totalNomina.toFixed(2));
 }

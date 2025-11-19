@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f7f7;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.formulario {
+    background: white;
+    padding: 25px;
+    width: 350px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+    margin-bottom: 25px;
+}
+
+
+.fila {
+    margin-bottom: 18px;
+}
+
+
+.fila label {
+    font-weight: bold;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+.cajaTexto {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.cajaTexto:focus {
+    border-color: #0066ff;
+    box-shadow: 0 0 4px rgba(0,102,255,0.5);
+}
+
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+    height: 14px;
+}
+
+
+.estiloBoton {
+    background: #0066ff;
+    color: white;
+    padding: 12px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 8px;
+    transition: 0.3s;
+}
+
+.estiloBoton:hover {
+    background: #0047b3;
+}
+
+
+.areaTabla {
+    margin-top: 30px;
+    background: white;
+    padding: 15px;
+    width: 400px;
+    border-radius: 12px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.15);
+    min-height: 50px;
+    font-size: 14px;
+}
+
+
+.areaTabla table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.areaTabla th {
+    text-align: left;
+    padding: 8px;
+    background: #e8e8e8;
+}
+
+.areaTabla td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}

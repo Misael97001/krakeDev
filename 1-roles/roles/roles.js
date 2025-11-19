@@ -140,7 +140,7 @@ guardar = function () {
         validarNombre(valorNombre) &
         validarApellido(valorApellido) &
         validarSueldo(valorSueldo)) {
-
+            
         buscarEmpleado(valorCedula);
         if (esNuevo == false) {
             let empleado = [];

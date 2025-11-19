@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <script src="orden.js"></script>
+    <script src="utilitarios.js"></script>
+    <link rel="stylesheet" href="ordenEstilo.css">
+</head>
+
+<body onload="mostrarPersonas();">
+
+    <div class="formulario">
+
+        <div class="fila">
+            <label>NOMBRE</label>
+            <input type="text" class="cajaTexto" id="txtNombre" />
+            <div class="error" id="lblErrorNombre"></div>
+        </div>
+
+        <div class="fila">
+            <label>EDAD</label>
+            <input type="text" class="cajaTexto" id="txtEdad" />
+            <div class="error" id="lblErrorEdad"></div>
+        </div>
+
+        <input type="button" value="GUARDAR" class="estiloBoton" onclick="agregarPersona();">
+        <input type="button" value="ENCONTRAR MAYOR" class="estiloBoton" onclick="determinarMayor();">
+        <input type="button" value="ENCONTRAR MENOR" class="estiloBoton" onclick="determinarMenor();">
+
+    </div>
+
+    <div id="tablaPersonas" class="areaTabla"></div>
+
+</body>
